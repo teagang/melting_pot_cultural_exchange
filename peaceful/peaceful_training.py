@@ -43,6 +43,11 @@ if __name__ == "__main__":
     # from the loaded substrate. max_episode_length is passed.
     env = make_allelopathic_harvest_env(num_agents=2, max_episode_length=1000)
 
+    print("--- Debugging env object ---")
+    print("Type of env:", type(env))
+    print("Attributes of env:")
+    print(dir(env))
+
     print(f"Environment created: {env}")
     # With MeltingPotCompatibilityV0, observation_space and action_space are methods
     # that take an agent ID. We can't print a single unified space like before
@@ -59,7 +64,7 @@ if __name__ == "__main__":
 
     print(f"Initial observations keys: {observations.keys()}")
 
-    while not done and step_count < env.spec.max_episode_steps:
+    while not done and step_count < env.max_cycles:
         actions = {}
         for agent_id in env.agents: # Iterate through current agents for sampling actions
             actions[agent_id] = env.action_space(agent_id).sample()

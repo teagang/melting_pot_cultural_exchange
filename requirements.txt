@@ -1,0 +1,2 @@
+shimmy==2.0.0
+dm-meltingpot==2.1.1.dev10 

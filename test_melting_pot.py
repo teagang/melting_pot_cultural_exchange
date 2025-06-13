@@ -12,4 +12,5 @@ observations = env.reset()
 while env.agents:
     actions = {agent: env.action_space(agent).sample() for agent in env.agents}
     observations, rewards, terminations, truncations, infos = env.step(actions)
+    print(rewards) # note from calude they are doing random actions not learning
 env.close()

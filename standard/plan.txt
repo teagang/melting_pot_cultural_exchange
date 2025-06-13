@@ -17,17 +17,6 @@ What it needs to do:
         Load the allelopathic_harvest substrate from Melting Pot.
         Specify the number of agents (2 in this case).
         Set the maximum episode length (100 to 1000 steps).
-    Implement the custom reward wrapper:
-        Create a Gymnasium wrapper class (e.g., PeacefulRewardWrapper) that inherits from gymnasium.Wrapper.
-        Inside the wrapper's step method:
-            Call the base environment's step method to get the original observations, rewards, terminations, truncations, and infos.
-            Identify the punishment action: You'll need to know the integer ID or name of the action corresponding to the punishment beam. You can usually find this by inspecting the action space of the allelopathic_harvest environment.
-            Iterate through each agent's action in the current step.
-            If an agent's action is the punishment action, modify its reward by subtracting a significant amount (e.g., -1.0).
-            If an agent's action is not the punishment action, add a small positive reward (e.g., +0.1).
-            Return the modified rewards along with the other original step outputs.
-    Create a function to make the environment:
-        A function like make_peaceful_env() that instantiates the allelopathic_harvest environment and then wraps it with your PeacefulRewardWrapper. This makes it easy to create new instances of your custom environment.
 
 Script 2: train_agent.py
 

@@ -1,0 +1,10 @@
+10 June:
+- the test_melting_pot.py file runs and shows the allelopathic harvest substrate
+- I refined the project plan
+- peaceful_training.py is not yet working, troubleshoot tomorrow
+
+11 June
+- created a repo 
+- checked gitignore
+- Defined the allelopathic_harvest scenario
+- 
